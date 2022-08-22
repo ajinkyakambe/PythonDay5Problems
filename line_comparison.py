@@ -1,16 +1,24 @@
-# This is a sample Python script.
+# As a fan of geometry, I want to
+# model a line based on a point
+# consisting of (x, y) co-ordinates
+# using the Cartesian system,
+# So that I can calculate its
+# length .
+#
+# - A Length as 2 Points (x1, y1) and (x2, y2)
+# - Length of a Line = sqrt( (x2 - x1) ^ 2 + (y2 - y1) ^ 2)
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# Math library from python
+import math
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# Function to calculate distance
+def calculatedistancebetweentwopoints(x1, y1, x2, y2):
+    # Calculating distance
+    # - Length of a Line = sqrt( (x2 - x1) ^ 2 + (y2 - y1) ^ 2)
+    return math.sqrt(math.pow(x2 - x1, 2) +
+                     math.pow(y2 - y1, 2) * 1.0)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# Driving Code
+print("%.6f" % calculatedistancebetweentwopoints(3, 4, 4, 3))
