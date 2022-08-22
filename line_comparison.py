@@ -1,24 +1,35 @@
-# As a fan of geometry, I want to
-# model a line based on a point
-# consisting of (x, y) co-ordinates
-# using the Cartesian system,
-# So that I can calculate its
-# length .
-#
-# - A Length as 2 Points (x1, y1) and (x2, y2)
-# - Length of a Line = sqrt( (x2 - x1) ^ 2 + (y2 - y1) ^ 2)
-
-# Math library from python
-import math
+# UC2: As a fan of geometry, I want to
+# check equality of two lines
+# based on the end points, So
+# that I know when two lines are
+# the equal. - Using Java equals method to check equality of 2 Lengths is
+# preferable.
 
 
-# Function to calculate distance
-def calculatedistancebetweentwopoints(x1, y1, x2, y2):
-    # Calculating distance
-    # - Length of a Line = sqrt( (x2 - x1) ^ 2 + (y2 - y1) ^ 2)
-    return math.sqrt(math.pow(x2 - x1, 2) +
-                     math.pow(y2 - y1, 2) * 1.0)
+# sol: two given straight lines are identical then there co-efficients should be proportional
+# a1/a2 = b1/b2 = c1/c2
+
+def equality_of_two_lines(a1, b1, c1, a2, b2, c2):
+    if ((a1 // a2 == b1 // b2) and
+            (a1 // a2 == c1 // c2) and
+            (b1 // b2 == c1 // c2)):
+        print("The given straight lines",
+              "are identical")
+    else:
+        print("The given straight lines",
+              "are not identical")
 
 
-# Driving Code
-print("%.6f" % calculatedistancebetweentwopoints(3, 4, 4, 3))
+# Driver Code for same lines
+a1, b1 = -2, 4
+c1, a2 = 3, -6
+b2, c2 = 12, 9
+equality_of_two_lines(a1, b1, c1, a2, b2, c2)
+
+# Driver Code for different lines
+
+d1, e1 = -3, 4
+f1, d2 = 4, 6
+e2, f2 = 13, 42
+
+equality_of_two_lines(d1, e1, f1, d2, e2, f2)
