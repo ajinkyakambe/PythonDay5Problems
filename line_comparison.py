@@ -1,35 +1,29 @@
-# UC2: As a fan of geometry, I want to
-# check equality of two lines
-# based on the end points, So
-# that I know when two lines are
-# the equal. - Using Java equals method to check equality of 2 Lengths is
-# preferable.
+# UC3 As a fan of geometry, I want to
+# compare two lines based on
+# the end points, So that I know
+# one line is equal, greater or
+# less than the other line.
+
+import math
 
 
-# sol: two given straight lines are identical then there co-efficients should be proportional
-# a1/a2 = b1/b2 = c1/c2
+def check_equality_between_lines(x1, x2, x3, x4, y1, y2, y3, y4):
 
-def equality_of_two_lines(a1, b1, c1, a2, b2, c2):
-    if ((a1 // a2 == b1 // b2) and
-            (a1 // a2 == c1 // c2) and
-            (b1 // b2 == c1 // c2)):
-        print("The given straight lines",
-              "are identical")
+    length1 = math.sqrt(math.pow(x2 - x1, 2) + math.pow(y2 - y1, 2))
+    length2 = math.sqrt(math.pow(x4 - x3, 2) + math.pow(y4 - y3, 2))
+
+    print("The length of first line is: ")
+    print(length1)
+    print("The length of second line is: ")
+    print(length2)
+
+    if length1 > length2:
+        print("Length of first line is greater than that of second line.")
+    elif length1 < length2:
+        print("Length of first line is lesser than that of second line.")
     else:
-        print("The given straight lines",
-              "are not identical")
+        print("Lengths of both the lines are equal.")
 
 
-# Driver Code for same lines
-a1, b1 = -2, 4
-c1, a2 = 3, -6
-b2, c2 = 12, 9
-equality_of_two_lines(a1, b1, c1, a2, b2, c2)
-
-# Driver Code for different lines
-
-d1, e1 = -3, 4
-f1, d2 = 4, 6
-e2, f2 = 13, 42
-
-equality_of_two_lines(d1, e1, f1, d2, e2, f2)
+# Driving code
+check_equality_between_lines(1, 1, 4, 4, 1, 8, 2, 4)
